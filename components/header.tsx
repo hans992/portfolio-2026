@@ -67,13 +67,22 @@ export function Header() {
             );
           })}
           <a
-            href="https://github.com"
+            href="https://github.com/hans992"
             target="_blank"
             rel="noopener noreferrer"
             className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-muted-foreground transition-colors hover:text-foreground sm:min-w-0"
             aria-label="GitHub"
           >
             <span className="text-sm font-medium sm:text-base">{t("github")}</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/andrijanic-damir/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-muted-foreground transition-colors hover:text-foreground sm:min-w-0"
+            aria-label="LinkedIn"
+          >
+            <span className="text-sm font-medium sm:text-base">{t("linkedin")}</span>
           </a>
           <ThemeToggle />
           <Link
@@ -140,13 +149,24 @@ export function Header() {
             })}
             <li>
               <a
-                href="https://github.com"
+                href="https://github.com/hans992"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex min-h-[48px] items-center rounded-md px-3 text-base font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
                 onClick={closeMobile}
               >
                 {t("github")}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/andrijanic-damir/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-[48px] items-center rounded-md px-3 text-base font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                onClick={closeMobile}
+              >
+                {t("linkedin")}
               </a>
             </li>
           </ul>

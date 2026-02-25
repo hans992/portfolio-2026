@@ -11,12 +11,20 @@ export function Footer() {
         <p className="text-base text-muted-foreground sm:text-lg">{t("openSource")}</p>
         <div className="mt-6 flex flex-wrap items-center gap-6">
           <a
-            href="https://github.com"
+            href="https://github.com/hans992"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium text-primary underline-offset-4 hover:underline"
           >
             GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/andrijanic-damir/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+          >
+            LinkedIn
           </a>
           <span className="text-sm text-muted-foreground">
             {t("copyright", { year: new Date().getFullYear() })}
