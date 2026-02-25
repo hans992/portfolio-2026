@@ -8,11 +8,19 @@ import { cn } from "@/lib/utils";
 
 type ProjectKey = "hausheld" | "nexus" | "croatia360" | "crm";
 
-const projectLinks: Record<ProjectKey, { live?: string; repo?: string; caseStudy?: boolean }> = {
-  hausheld: { caseStudy: true },
-  nexus: {},
-  croatia360: {},
-  crm: {},
+const projectLinks: Record<ProjectKey, { live?: string; adminDemo?: string; repo?: string; caseStudy?: boolean }> = {
+  hausheld: {
+    caseStudy: true,
+    repo: "https://github.com/hans992/Hausheld_App",
+    live: "https://hausheld-app.vercel.app/",
+    adminDemo: "https://hausheld-app-admin.vercel.app/",
+  },
+  nexus: { repo: "https://github.com/hans992/NexusAI" },
+  croatia360: {
+    repo: "https://github.com/hans992/croatia360-v0.2",
+    live: "https://croatia360.vercel.app/en",
+  },
+  crm: { repo: "https://github.com/hans992/CRM-app" },
 };
 
 type Props = {
@@ -76,6 +84,17 @@ export function ProjectCard({ projectKey, index }: Props) {
               className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {t("live")}
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+          )}
+          {links.adminDemo && (
+            <a
+              href={links.adminDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {t("admin")}
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
           )}
