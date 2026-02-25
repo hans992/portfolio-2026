@@ -29,6 +29,13 @@ export function Header() {
 
   const closeMobile = () => setMobileOpen(false);
 
+  // Pathname from next/navigation includes locale (e.g. /en or /de/projects/hausheld).
+  // Strip it so the locale switcher doesn't produce /de/en or /en/de.
+  const pathnameWithoutLocale = pathname?.replace(/^\/(en|de)(\/|$)/, "$2") ?? "";
+  const pathForOtherLocale = pathnameWithoutLocale === "" || pathnameWithoutLocale === "/"
+    ? `/${otherLocale}`
+    : `/${otherLocale}${pathnameWithoutLocale}`;
+
   return (
     <header
       className={cn(
@@ -86,7 +93,7 @@ export function Header() {
           </a>
           <ThemeToggle />
           <Link
-            href={pathname ? `/${otherLocale}${pathname}` : `/${otherLocale}`}
+            href={pathForOtherLocale}
             className="rounded-full border border-border/60 px-3 py-2 text-xs font-medium uppercase tracking-wide text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground min-h-[44px] inline-flex items-center sm:min-h-0 sm:py-1.5"
           >
             {otherLocale === "en" ? "EN" : "DE"}
@@ -97,7 +104,7 @@ export function Header() {
         <div className="flex items-center gap-2 sm:hidden">
           <ThemeToggle />
           <Link
-            href={pathname ? `/${otherLocale}${pathname}` : `/${otherLocale}`}
+            href={pathForOtherLocale}
             className="rounded-full border border-border/60 px-3 py-2 text-xs font-medium uppercase text-muted-foreground hover:bg-accent hover:text-accent-foreground"
             aria-label={otherLocale === "en" ? "Switch to English" : "Switch to German"}
           >
