@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "services": "Services",
+    "github": "GitHub",
+    "backToProjects": "Back to projects"
+  },
+  "hero": {
+    "headline": "Engineering the next generation of AI web applications.",
+    "subheadline": "Hi, I'm Damir. I leverage modern frameworks and Large Language Models to build secure, scalable, and intelligent software designed for real-world logistics.",
+    "cta": "See my work",
+    "ctaContact": "Contact ↗",
+    "available": "Available for work"
+  },
+  "services": {
+    "title": "What I Do",
+    "label": "Services",
+    "one": {
+      "title": "Full-Stack & AI",
+      "desc": "From frontend to backend and RAG pipelines, I build complete web solutions. Modern stacks, scalable apps, and LLMs that talk to your data.",
+      "tech": ["Next.js, FastAPI, PostgreSQL", "RAG, Pinecone, Gemini", "TypeScript, Tailwind, PWA"]
+    },
+    "two": {
+      "title": "Compliance & Logistics",
+      "desc": "I turn strict regulations (GDPR, SGB XI) into clean software. Audit trails, encryption, and workflow systems that work for real teams.",
+      "tech": ["GDPR by design, audit logs", "PostGIS, state machines", "Multi-app ecosystems"]
+    },
+    "three": {
+      "title": "UI/UX & i18n",
+      "desc": "Responsive, accessible interfaces. Multilingual apps and design systems that feel effortless across devices and languages.",
+      "tech": ["React, Next.js, Framer Motion", "next-intl, 8+ languages", "Figma to pixel-perfect code"]
+    }
+  },
+  "projects": {
+    "title": "Selected work",
+    "label": "Projects",
+    "caseStudy": "Full case study",
+    "live": "View live",
+    "repo": "Repository",
+    "hausheld": {
+      "name": "Hausheld",
+      "angle": "The complex system",
+      "category": "Development",
+      "year": "2025",
+      "bullets": [
+        "Manual paper schedules for 200 workers → PostGIS-powered substitute suggestions by distance and capacity",
+        "GPS-verified check-in/out and client signatures; append-only audit log and health data encryption (Fernet)",
+        "SGB XI CSV export; strict shift state machine (Scheduled → In_Progress → Completed)"
+      ]
+    },
+    "nexus": {
+      "name": "Nexus AI",
+      "angle": "The AI engineer",
+      "category": "Development",
+      "year": "2025",
+      "bullets": [
+        "Private document vault → RAG with Gemini embeddings (768d) + Pinecone",
+        "Hybrid search (vector + keyword fallback); conversation memory (last 4 messages condensed)",
+        "Multi-modal PDF ingest (text + Vision for images/charts); Prisma chat history"
+      ]
+    },
+    "croatia360": {
+      "name": "Croatia 360",
+      "angle": "The product + i18n",
+      "category": "Product",
+      "year": "2025",
+      "bullets": [
+        "Premium AI travel guide → SARA AI chatbot (Vercel AI SDK + Gemini)",
+        "8 languages (react-i18next); inspiration cards + explore destinations + My Trip",
+        "Dark/light theme; Next.js 16, Radix, Framer Motion"
+      ]
+    },
+    "crm": {
+      "name": "CRM App",
+      "angle": "The full-stack builder",
+      "category": "Development",
+      "year": "2025",
+      "bullets": [
+        "Pipeline KPIs (win rate, weighted forecast, trend) in a dedicated KPI engine",
+        "RBAC (Admin/Manager/Sales Rep); Recharts funnel; Prisma + server actions",
+        "Notes loaded on demand to avoid N+1"
+      ]
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "languages": "Languages & Tools",
+    "frameworks": "Frameworks & Libraries",
+    "concepts": "Core concepts",
+    "backend": "Backend",
+    "ai": "AI & Data",
+    "frontend": "Frontend",
+    "devops": "DevOps"
+  },
+  "about": {
+    "title": "About",
+    "label": "About Me",
+    "p1": "I started my journey in tech not with a computer science degree, but with a need to rebuild. After facing significant personal challenges, I dedicated myself to learning how to build. What followed was a year of intense, focused work.",
+    "p2": "Today, I specialize in building full‑stack AI applications for the European market, with a deep understanding of the logistical and regulatory challenges (GDPR, SGB XI) that matter here. My work on Hausheld, a complete workflow system for a 200‑employee home‑help service in NRW, is a testament to my ability to turn a complex, real‑world 'logistical nightmare' into a clean, production‑ready digital platform.",
+    "p3": "I don't just write code. I build systems that work for people."
+  },
+  "footer": {
+    "openSource": "I study projects like openclaw to understand advanced agent frameworks.",
+    "copyright": "© {year} Damir Andrijanic",
+    "cta": "Let's make it happen",
+    "ctaSub": "Have a project in mind?",
+    "getQuote": "Get a quote"
+  },
+  "hausheldPage": {
+    "title": "Hausheld — Home-help workflow platform",
+    "problem": "Problem",
+    "problemText": "A 200-employee home-help service in NRW faced manual paper schedules, proof of service on paper, and strict regulatory requirements (GDPR, SGB XI) for health data and billing.",
+    "solution": "Solution",
+    "solutionText": "A distributed ecosystem: one FastAPI backend (PostgreSQL + PostGIS), a Next.js PWA for field workers (schedule, GPS check-in/out, client signatures), and a Vite+React admin dashboard (calendar, sick leave, substitute suggestions, budget alerts, SGB XI CSV export, audit log). PostGIS powers distance-based substitute suggestions; a strict shift state machine and append-only audit log support compliance.",
+    "evidence": "Evidence",
+    "gdprLink": "GDPR compliance statement",
+    "architecture": "System architecture"
+  }
+}

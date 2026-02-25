@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "home": "Start",
+    "projects": "Projekte",
+    "about": "Über mich",
+    "contact": "Kontakt",
+    "services": "Leistungen",
+    "github": "GitHub",
+    "backToProjects": "Zurück zu den Projekten"
+  },
+  "hero": {
+    "headline": "Die nächste Generation KI-Webanwendungen.",
+    "subheadline": "Hi, ich bin Damir. Ich nutze moderne Frameworks und Large Language Models, um sichere, skalierbare und intelligente Software für reale Logistik zu entwickeln.",
+    "cta": "Meine Arbeit ansehen",
+    "ctaContact": "Kontakt ↗",
+    "available": "Verfügbar für Projekte"
+  },
+  "services": {
+    "title": "Was ich mache",
+    "label": "Leistungen",
+    "one": {
+      "title": "Full-Stack & KI",
+      "desc": "Vom Frontend bis zu RAG-Pipelines: komplette Web-Lösungen. Moderne Stacks, skalierbare Apps und LLMs, die mit Ihren Daten arbeiten.",
+      "tech": ["Next.js, FastAPI, PostgreSQL", "RAG, Pinecone, Gemini", "TypeScript, Tailwind, PWA"]
+    },
+    "two": {
+      "title": "Compliance & Logistik",
+      "desc": "Strenge Vorgaben (GDPR, SGB XI) werden zu klarer Software. Audit-Logs, Verschlüsselung und Workflow-Systeme für echte Teams.",
+      "tech": ["GDPR by design, Audit-Logs", "PostGIS, State Machines", "Multi-App-Ökosysteme"]
+    },
+    "three": {
+      "title": "UI/UX & i18n",
+      "desc": "Responsive, barrierearme Oberflächen. Mehrsprachige Apps und Design-Systeme, die sich mühelos anfühlen.",
+      "tech": ["React, Next.js, Framer Motion", "next-intl, 8+ Sprachen", "Figma zu pixelgenauem Code"]
+    }
+  },
+  "projects": {
+    "title": "Ausgewählte Arbeiten",
+    "label": "Projekte",
+    "caseStudy": "Fallstudie ansehen",
+    "live": "Live ansehen",
+    "repo": "Repository",
+    "hausheld": {
+      "name": "Hausheld",
+      "angle": "Das komplexe System",
+      "category": "Entwicklung",
+      "year": "2025",
+      "bullets": [
+        "Manuelle Papierpläne für 200 Mitarbeiter → PostGIS-gestützte Vertretungsvorschläge nach Entfernung und Kapazität",
+        "GPS-verifizierter Check-in/out und Kundensignaturen; nur anhängendes Audit-Log und Verschlüsselung sensibler Daten (Fernet)",
+        "SGB-XI-CSV-Export; strikter Schicht-Zustandsautomat (Geplant → In Bearbeitung → Abgeschlossen)"
+      ]
+    },
+    "nexus": {
+      "name": "Nexus AI",
+      "angle": "Der KI-Ingenieur",
+      "category": "Entwicklung",
+      "year": "2025",
+      "bullets": [
+        "Privates Dokumenten-Vault → RAG mit Gemini-Embeddings (768d) + Pinecone",
+        "Hybridsuche (Vektor + Stichwort); Konversationsgedächtnis (letzte 4 Nachrichten verdichtet)",
+        "Multimodaler PDF-Import (Text + Vision für Bilder/Tabellen); Prisma-Chatverlauf"
+      ]
+    },
+    "croatia360": {
+      "name": "Croatia 360",
+      "angle": "Produkt + i18n",
+      "category": "Produkt",
+      "year": "2025",
+      "bullets": [
+        "Premium-KI-Reiseführer → SARA-KI-Chatbot (Vercel AI SDK + Gemini)",
+        "8 Sprachen (react-i18next); Inspirationskarten + Reiseziele + Meine Reise",
+        "Dark/Light-Theme; Next.js 16, Radix, Framer Motion"
+      ]
+    },
+    "crm": {
+      "name": "CRM App",
+      "angle": "Der Full-Stack-Entwickler",
+      "category": "Entwicklung",
+      "year": "2025",
+      "bullets": [
+        "Pipeline-KPIs (Abschlussrate, gewichtete Prognose, Trend) in einer eigenen KPI-Engine",
+        "RBAC (Admin/Manager/Vertrieb); Recharts-Funnel; Prisma + Server Actions",
+        "Notizen bei Bedarf geladen (kein N+1)"
+      ]
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "languages": "Sprachen & Tools",
+    "frameworks": "Frameworks & Bibliotheken",
+    "concepts": "Grundlagen",
+    "backend": "Backend",
+    "ai": "KI & Daten",
+    "frontend": "Frontend",
+    "devops": "DevOps"
+  },
+  "about": {
+    "title": "Über mich",
+    "label": "Über mich",
+    "p1": "Mein Weg in die Tech-Welt begann nicht mit einem Informatikstudium, sondern mit dem Bedürfnis, neu anzufangen. Nach großen persönlichen Herausforderungen habe ich mich darauf konzentriert, Dinge zu bauen. Es folgte ein Jahr intensiver, fokussierter Arbeit.",
+    "p2": "Heute spezialisiere ich mich auf Full-Stack-KI-Anwendungen für den europäischen Markt – mit einem klaren Verständnis für die logistischen und regulatorischen Anforderungen (GDPR, SGB XI), die hier zählen. Meine Arbeit an Hausheld, einer kompletten Workflow-Plattform für einen 200-Mitarbeiter-Pflegedienst in NRW, zeigt, wie aus einem komplexen „logistischen Albtraum“ eine klare, produktionsreife digitale Plattform wird.",
+    "p3": "Ich schreibe nicht nur Code. Ich baue Systeme, die für Menschen funktionieren."
+  },
+  "footer": {
+    "openSource": "Ich studiere Projekte wie openclaw, um fortgeschrittene Agent-Frameworks zu verstehen.",
+    "copyright": "© {year} Damir Andrijanic",
+    "cta": "Lass uns starten",
+    "ctaSub": "Ein Projekt im Kopf?",
+    "getQuote": "Anfrage senden"
+  },
+  "hausheldPage": {
+    "title": "Hausheld — Workflow-Plattform für die mobile Pflege",
+    "problem": "Ausgangslage",
+    "problemText": "Ein Pflegedienst mit 200 Mitarbeitern in NRW arbeitete mit manuellen Papierplänen, Nachweisen auf Papier und strengen regulatorischen Anforderungen (GDPR, SGB XI) für Stammdaten und Abrechnung.",
+    "solution": "Lösung",
+    "solutionText": "Ein verteiltes Ökosystem: eine FastAPI-Backend (PostgreSQL + PostGIS), eine Next.js-PWA für Mitarbeiter im Einsatz (Plan, GPS-Check-in/out, Kundensignatur) und ein Vite+React-Admin-Dashboard (Kalender, Krankmeldungen, Vertretungsvorschläge, Budget-Warnungen, SGB-XI-CSV-Export, Audit-Log). PostGIS liefert distanzbasierte Vertretungsvorschläge; ein strikter Schicht-Zustandsautomat und ein nur anhängendes Audit-Log unterstützen die Compliance.",
+    "evidence": "Nachweise",
+    "gdprLink": "GDPR-Compliance-Erklärung",
+    "architecture": "Systemarchitektur"
+  }
+}
