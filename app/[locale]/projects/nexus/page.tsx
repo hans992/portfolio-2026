@@ -5,6 +5,23 @@ import { ArrowLeft } from "lucide-react";
 
 type Props = { params: Promise<{ locale: string }> };
 
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("nexusPage");
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://damir-andrijanic.com";
+  const canonical = `${baseUrl}/${locale}/projects/nexus`;
+  const title = t("title");
+  const description = t("tagline");
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: { title, description, url: canonical, type: "website" as const },
+    twitter: { card: "summary_large_image" as const, title, description },
+  };
+}
+
 export default async function NexusPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -36,6 +53,35 @@ export default async function NexusPage({ params }: Props) {
             <p className="text-muted-foreground leading-relaxed">
               {t("overview")}
             </p>
+
+            <div>
+              <h2 className="font-display text-lg font-semibold text-foreground mb-4">
+                {t("architectureTitle")}
+              </h2>
+              <div className="rounded-lg border border-border bg-muted/30 p-4 overflow-x-auto">
+                <pre className="text-xs text-muted-foreground whitespace-pre font-mono">
+{`flowchart LR
+  subgraph Client
+    App["Next.js App"]
+  end
+  subgraph API
+    Chat["/api/chat"]
+    Ingest["Ingest pipeline"]
+  end
+  subgraph Data
+    Pinecone["Pinecone"]
+    DB["Prisma / PostgreSQL"]
+    Gemini["Gemini"]
+  end
+  App -->|query| Chat
+  Chat -->|embed + search| Pinecone
+  Chat -->|stream| Gemini
+  App -->|upload| Ingest
+  Ingest -->|chunk + embed| Pinecone
+  Chat -->|sessions| DB`}
+                </pre>
+              </div>
+            </div>
 
             <div>
               <h2 className="font-display text-lg font-semibold text-foreground mb-4">

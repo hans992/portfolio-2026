@@ -5,6 +5,23 @@ import { ArrowLeft } from "lucide-react";
 
 type Props = { params: Promise<{ locale: string }> };
 
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("crmPage");
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://damir-andrijanic.com";
+  const canonical = `${baseUrl}/${locale}/projects/crm`;
+  const title = t("title");
+  const description = t("tagline");
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: { title, description, url: canonical, type: "website" as const },
+    twitter: { card: "summary_large_image" as const, title, description },
+  };
+}
+
 export default async function CrmPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -36,6 +53,35 @@ export default async function CrmPage({ params }: Props) {
             <p className="text-muted-foreground leading-relaxed">
               {t("overview")}
             </p>
+
+            <div>
+              <h2 className="font-display text-lg font-semibold text-foreground mb-4">
+                {t("architectureTitle")}
+              </h2>
+              <div className="rounded-lg border border-border bg-muted/30 p-4 overflow-x-auto">
+                <pre className="text-xs text-muted-foreground whitespace-pre font-mono">
+{`flowchart LR
+  subgraph UI
+    Dashboard["Dashboard"]
+    Deals["Deals / Detail"]
+  end
+  subgraph Server
+    Actions["Server Actions"]
+    KPI["KPI engine"]
+  end
+  subgraph Data
+    Prisma["Prisma"]
+    SQLite["SQLite"]
+  end
+  Dashboard --> Actions
+  Deals --> Actions
+  Actions --> Prisma
+  Prisma --> SQLite
+  KPI -->|reads| Prisma
+  Dashboard -->|metrics| KPI`}
+                </pre>
+              </div>
+            </div>
 
             <div>
               <h2 className="font-display text-lg font-semibold text-foreground mb-4">

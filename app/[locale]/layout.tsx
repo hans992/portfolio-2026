@@ -7,6 +7,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { LangSetter } from "@/components/lang-setter";
 import { Toaster } from "sonner";
+import { JsonLd } from "@/components/json-ld";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -56,9 +57,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!routing.locales.includes(locale as "en" | "de")) notFound();
   setRequestLocale(locale);
   const messages = await getMessages();
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://damir-andrijanic.com";
 
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <JsonLd baseUrl={baseUrl} locale={locale} />
       <LangSetter locale={locale} />
       <a
         href="#main-content"

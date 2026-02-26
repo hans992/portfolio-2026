@@ -2,20 +2,25 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { MermaidDiagram } from "@/components/mermaid-diagram";
-
-const HAUSHELD_ARCHITECTURE_CHART = `flowchart LR
-  subgraph Clients
-    PWA["Mobile PWA<br/><i>Next.js</i>"]
-    Admin["Admin Dashboard<br/><i>Vite + React</i>"]
-  end
-  subgraph Backend["Backend API"]
-    API["FastAPI<br/>PostgreSQL + PostGIS"]
-  end
-  PWA <-->|"JWT"| API
-  Admin <-->|"JWT"| API`;
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("hausheldPage");
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://damir-andrijanic.com";
+  const canonical = `${baseUrl}/${locale}/projects/hausheld`;
+  const title = t("title");
+  const description = t("tagline");
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: { title, description, url: canonical, type: "website" as const },
+    twitter: { card: "summary_large_image" as const, title, description },
+  };
+}
 
 export default async function HausheldPage({ params }: Props) {
   const { locale } = await params;
@@ -83,8 +88,19 @@ export default async function HausheldPage({ params }: Props) {
               <p className="text-muted-foreground leading-relaxed">
                 {t("architectureIntro")}
               </p>
-              <div className="mt-4">
-                <MermaidDiagram chart={HAUSHELD_ARCHITECTURE_CHART} />
+              <div className="mt-4 rounded-lg border border-border bg-muted/30 p-4 overflow-x-auto">
+                <pre className="text-xs text-muted-foreground whitespace-pre font-mono">
+{`flowchart LR
+  subgraph Clients
+    PWA["Mobile PWA - Next.js"]
+    Admin["Admin Dashboard - Vite + React"]
+  end
+  subgraph Backend["Backend API"]
+    API["FastAPI / PostgreSQL + PostGIS"]
+  end
+  PWA <-->|JWT| API
+  Admin <-->|JWT| API`}
+                </pre>
               </div>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li><strong className="text-foreground">Backend:</strong> {t("backendDesc")}</li>
