@@ -7,7 +7,7 @@ import { MermaidDiagram } from "@/components/mermaid-diagram";
 const HAUSHELD_CHART = `flowchart LR
   subgraph Clients
     PWA["Mobile PWA - Next.js"]
-    Admin["Admin - Vite + React"]
+    Admin["Admin Dashboard - Vite + React"]
   end
   subgraph Backend["Backend API"]
     API["FastAPI / PostgreSQL + PostGIS"]
@@ -88,6 +88,7 @@ export default async function HausheldPage({ params }: Props) {
               <ul className="space-y-3 text-muted-foreground">
                 <li><strong className="text-foreground">Mobile PWA:</strong> {t("featureMobilePWA")}</li>
                 <li><strong className="text-foreground">Admin dashboard:</strong> {t("featureAdmin")}</li>
+                <li><strong className="text-foreground">Geo map:</strong> {t("featureGeoMap")}</li>
                 <li><strong className="text-foreground">Substitution engine:</strong> {t("featureSubstitution")}</li>
                 <li><strong className="text-foreground">Budget & billing:</strong> {t("featureBudget")}</li>
                 <li><strong className="text-foreground">Audit trail:</strong> {t("featureAudit")}</li>
@@ -146,6 +147,7 @@ export default async function HausheldPage({ params }: Props) {
                 <li>{t("geospatialBullet1")}</li>
                 <li>{t("geospatialBullet2")}</li>
                 <li>{t("geospatialBullet3")}</li>
+                <li>{t("geospatialBullet4")}</li>
               </ul>
             </div>
 
@@ -219,6 +221,8 @@ export default async function HausheldPage({ params }: Props) {
                   </thead>
                   <tbody className="text-muted-foreground">
                     <tr className="border-b border-border/60"><td className="px-4 py-3 font-medium text-foreground">Auth</td><td className="px-4 py-3">{t("apiAuth")}</td></tr>
+                    <tr className="border-b border-border/60"><td className="px-4 py-3 font-medium text-foreground">Geo (v1)</td><td className="px-4 py-3">{t("apiGeo")}</td></tr>
+                    <tr className="border-b border-border/60"><td className="px-4 py-3 font-medium text-foreground">Stats (v1)</td><td className="px-4 py-3">{t("apiStats")}</td></tr>
                     <tr className="border-b border-border/60"><td className="px-4 py-3 font-medium text-foreground">Shifts</td><td className="px-4 py-3">{t("apiShifts")}</td></tr>
                     <tr className="border-b border-border/60"><td className="px-4 py-3 font-medium text-foreground">Workers</td><td className="px-4 py-3">{t("apiWorkers")}</td></tr>
                     <tr className="border-b border-border/60"><td className="px-4 py-3 font-medium text-foreground">Clients</td><td className="px-4 py-3">{t("apiClients")}</td></tr>
