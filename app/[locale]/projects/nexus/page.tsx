@@ -2,6 +2,27 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { MermaidDiagram } from "@/components/mermaid-diagram";
+
+const NEXUS_CHART = `flowchart LR
+  subgraph Client
+    App["Next.js App"]
+  end
+  subgraph API
+    Chat["/api/chat"]
+    Ingest["Ingest"]
+  end
+  subgraph Data
+    Pinecone["Pinecone"]
+    DB["Prisma / PostgreSQL"]
+    Gemini["Gemini"]
+  end
+  App -->|query| Chat
+  Chat -->|search| Pinecone
+  Chat -->|stream| Gemini
+  App -->|upload| Ingest
+  Ingest -->|embed| Pinecone
+  Chat -->|sessions| DB`;
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -58,29 +79,7 @@ export default async function NexusPage({ params }: Props) {
               <h2 className="font-display text-lg font-semibold text-foreground mb-4">
                 {t("architectureTitle")}
               </h2>
-              <div className="rounded-lg border border-border bg-muted/30 p-4 overflow-x-auto">
-                <pre className="text-xs text-muted-foreground whitespace-pre font-mono">
-{`flowchart LR
-  subgraph Client
-    App["Next.js App"]
-  end
-  subgraph API
-    Chat["/api/chat"]
-    Ingest["Ingest pipeline"]
-  end
-  subgraph Data
-    Pinecone["Pinecone"]
-    DB["Prisma / PostgreSQL"]
-    Gemini["Gemini"]
-  end
-  App -->|query| Chat
-  Chat -->|embed + search| Pinecone
-  Chat -->|stream| Gemini
-  App -->|upload| Ingest
-  Ingest -->|chunk + embed| Pinecone
-  Chat -->|sessions| DB`}
-                </pre>
-              </div>
+              <MermaidDiagram chart={NEXUS_CHART} />
             </div>
 
             <div>

@@ -2,6 +2,25 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { MermaidDiagram } from "@/components/mermaid-diagram";
+
+const CROATIA360_CHART = `flowchart LR
+  subgraph User
+    Browser["Browser"]
+  end
+  subgraph App
+    Next["Next.js"]
+    Locales["[locale] routes"]
+  end
+  subgraph AI
+    SARA["SARA AI"]
+    Gemini["Google Gemini"]
+  end
+  Browser --> Next
+  Next --> Locales
+  Next -->|chat| SARA
+  SARA -->|Vercel AI SDK| Gemini
+  Next -.->|optional| Supabase["Supabase"]`;
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -58,27 +77,7 @@ export default async function Croatia360Page({ params }: Props) {
               <h2 className="font-display text-lg font-semibold text-foreground mb-4">
                 {t("architectureTitle")}
               </h2>
-              <div className="rounded-lg border border-border bg-muted/30 p-4 overflow-x-auto">
-                <pre className="text-xs text-muted-foreground whitespace-pre font-mono">
-{`flowchart LR
-  subgraph User
-    Browser["Browser"]
-  end
-  subgraph App
-    Next["Next.js"]
-    Locales["[locale] routes"]
-  end
-  subgraph AI
-    SARA["SARA AI"]
-    Gemini["Google Gemini"]
-  end
-  Browser --> Next
-  Next --> Locales
-  Next -->|chat| SARA
-  SARA -->|Vercel AI SDK| Gemini
-  Next -->|optional| Supabase["Supabase"]`}
-                </pre>
-              </div>
+              <MermaidDiagram chart={CROATIA360_CHART} />
             </div>
 
             <div>

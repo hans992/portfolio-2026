@@ -49,7 +49,7 @@ export function MermaidDiagram({ chart, className }: Props) {
   return (
     <div
       ref={containerRef}
-      className={`mermaid-diagram flex justify-center rounded-lg border border-border bg-muted/30 p-4 [&_svg]:max-w-full [&_svg]:h-auto ${className ?? ""}`}
+      className={`mermaid-diagram flex min-h-[200px] justify-center rounded-xl border border-border bg-muted/30 p-6 [&_svg]:max-w-full [&_svg]:h-auto [&_svg]:min-w-[280px] ${className ?? ""}`}
       aria-hidden
     />
   );

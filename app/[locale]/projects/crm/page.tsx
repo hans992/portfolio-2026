@@ -2,6 +2,27 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { MermaidDiagram } from "@/components/mermaid-diagram";
+
+const CRM_CHART = `flowchart LR
+  subgraph UI
+    Dashboard["Dashboard"]
+    Deals["Deals / Detail"]
+  end
+  subgraph Server
+    Actions["Server Actions"]
+    KPI["KPI engine"]
+  end
+  subgraph Data
+    Prisma["Prisma"]
+    SQLite["SQLite"]
+  end
+  Dashboard --> Actions
+  Deals --> Actions
+  Actions --> Prisma
+  Prisma --> SQLite
+  KPI -->|reads| Prisma
+  Dashboard -->|metrics| KPI`;
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -58,29 +79,7 @@ export default async function CrmPage({ params }: Props) {
               <h2 className="font-display text-lg font-semibold text-foreground mb-4">
                 {t("architectureTitle")}
               </h2>
-              <div className="rounded-lg border border-border bg-muted/30 p-4 overflow-x-auto">
-                <pre className="text-xs text-muted-foreground whitespace-pre font-mono">
-{`flowchart LR
-  subgraph UI
-    Dashboard["Dashboard"]
-    Deals["Deals / Detail"]
-  end
-  subgraph Server
-    Actions["Server Actions"]
-    KPI["KPI engine"]
-  end
-  subgraph Data
-    Prisma["Prisma"]
-    SQLite["SQLite"]
-  end
-  Dashboard --> Actions
-  Deals --> Actions
-  Actions --> Prisma
-  Prisma --> SQLite
-  KPI -->|reads| Prisma
-  Dashboard -->|metrics| KPI`}
-                </pre>
-              </div>
+              <MermaidDiagram chart={CRM_CHART} />
             </div>
 
             <div>
