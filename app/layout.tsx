@@ -21,9 +21,10 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://damir-andrijanic.com"),
-  title: { default: "Damir Andrijanic | Full-Stack AI Engineer", template: "%s | Damir Andrijanic" },
+  title: { default: "Damir Andrijanic | Portfolio page", template: "%s" },
   description:
     "Full-stack engineer building AI-powered web applications for the European market. GDPR, SGB XI, logistics.",
+  icons: { icon: "/logo-white.png" },
   openGraph: {
     type: "website",
   },

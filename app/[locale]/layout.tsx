@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: Props) {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://damir-andrijanic.com";
   const canonical = `${baseUrl}/${locale}`;
   const titles: Record<string, string> = {
-    en: "Damir Andrijanic | Full-Stack AI Engineer",
-    de: "Damir Andrijanic | Full-Stack KI-Ingenieur",
+    en: "Damir Andrijanic | Portfolio page",
+    de: "Damir Andrijanic | Portfolio-Seite",
   };
   const descriptions: Record<string, string> = {
     en:

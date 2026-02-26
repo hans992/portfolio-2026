@@ -32,8 +32,8 @@ export async function generateMetadata({ params }: Props) {
   const t = await getTranslations("crmPage");
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://damir-andrijanic.com";
   const canonical = `${baseUrl}/${locale}/projects/crm`;
-  const title = t("title");
   const description = t("tagline");
+  const title = locale === "de" ? "Damir Andrijanic | Portfolio-Seite" : "Damir Andrijanic | Portfolio page";
   return {
     title,
     description,
