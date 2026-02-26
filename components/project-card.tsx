@@ -15,12 +15,13 @@ const projectLinks: Record<ProjectKey, { live?: string; adminDemo?: string; repo
     live: "https://hausheld-app.vercel.app/",
     adminDemo: "https://hausheld-app-admin.vercel.app/",
   },
-  nexus: { repo: "https://github.com/hans992/NexusAI" },
+  nexus: { caseStudy: true, repo: "https://github.com/hans992/NexusAI" },
   croatia360: {
+    caseStudy: true,
     repo: "https://github.com/hans992/croatia360-v0.2",
     live: "https://croatia360.vercel.app/en",
   },
-  crm: { repo: "https://github.com/hans992/CRM-app" },
+  crm: { caseStudy: true, repo: "https://github.com/hans992/CRM-app" },
 };
 
 type Props = {
@@ -69,7 +70,7 @@ export function ProjectCard({ projectKey, index }: Props) {
         <div className="flex flex-wrap gap-4 pt-3">
           {links.caseStudy && (
             <Link
-              href={`/${locale}/projects/hausheld`}
+              href={`/${locale}/projects/${projectKey}`}
               className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:underline"
             >
               {t("caseStudy")}

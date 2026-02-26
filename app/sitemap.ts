@@ -1,6 +1,8 @@
 import { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 
+const PROJECT_SLUGS = ["hausheld", "nexus", "croatia360", "crm"] as const;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://damir-andrijanic.com";
   const localeUrls = routing.locales.map((locale) => ({
@@ -9,11 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 1,
   }));
-  const hausheldUrls = routing.locales.map((locale) => ({
-    url: `${baseUrl}/${locale}/projects/hausheld`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
-  return [...localeUrls, ...hausheldUrls];
+  const projectUrls = routing.locales.flatMap((locale) =>
+    PROJECT_SLUGS.map((slug) => ({
+      url: `${baseUrl}/${locale}/projects/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    }))
+  );
+  return [...localeUrls, ...projectUrls];
 }
