@@ -6,19 +6,57 @@ import { motion } from "framer-motion";
 const skillGroups = [
   {
     key: "backend",
-    items: ["FastAPI", "SQLAlchemy", "PostGIS", "Alembic", "Prisma", "PostgreSQL"],
+    items: [
+      "Python",
+      "Node.js",
+      "FastAPI",
+      "SQLAlchemy",
+      "PostGIS",
+      "Alembic",
+      "Prisma",
+      "PostgreSQL",
+      "Pydantic",
+      "REST APIs",
+      "JWT",
+    ],
   },
   {
     key: "ai",
-    items: ["RAG", "Pinecone", "Gemini", "Vercel AI SDK"],
+    items: [
+      "RAG",
+      "OpenAI API",
+      "Google Gemini",
+      "Pinecone",
+      "Vercel AI SDK",
+      "Embeddings",
+      "Vector search",
+      "Conversation memory",
+    ],
   },
   {
     key: "frontend",
-    items: ["Next.js", "React", "TypeScript", "Tailwind", "PWA", "i18n", "Framer Motion", "Shadcn/Radix"],
+    items: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "PWA",
+      "i18n",
+      "Framer Motion",
+      "Shadcn/Radix",
+      "Recharts",
+    ],
   },
   {
     key: "devops",
-    items: ["Docker", "AWS (eu-central-1)", "Vercel", "CI/CD"],
+    items: [
+      "Docker",
+      "AWS (eu-central-1)",
+      "Google Cloud",
+      "Vercel",
+      "CI/CD",
+      "Git",
+    ],
   },
 ] as const;
 
