@@ -104,6 +104,35 @@
     "p2": "Today, I specialize in building full‑stack AI applications for the European market, with a deep understanding of the logistical and regulatory challenges (GDPR, SGB XI) that matter here. My work on Hausheld, a complete workflow system for a 200‑employee home‑help service in NRW, is a testament to my ability to turn a complex, real‑world 'logistical nightmare' into a clean, production‑ready digital platform.",
     "p3": "I don't just write code. I build systems that work for people."
   },
+  "contactSection": {
+    "title": "Get in touch",
+    "subtitle": "Have a project in mind? Send a message and I'll get back to you."
+  },
+  "contactForm": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "projectTypeLabel": "Project type",
+    "projectTypePlaceholder": "Select a project type",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "projectType_ai_chatbot": "AI Chatbot",
+    "projectType_rag_system": "RAG System",
+    "projectType_fullstack_webapp": "Full-Stack Web App",
+    "projectType_other": "Other",
+    "error_nameMin": "Name must be at least 2 characters",
+    "error_nameMax": "Name must be at most 100 characters",
+    "error_email": "Please enter a valid email address",
+    "error_projectType": "Please select a project type",
+    "error_messageMin": "Message must be at least 20 characters",
+    "error_messageMax": "Message must be at most 2000 characters",
+    "toast_success": "Message sent! I'll get back to you soon.",
+    "toast_error": "Something went wrong. Please try again.",
+    "toast_errorSend": "Failed to send message. Please try again."
+  },
   "footer": {
     "openSource": "I study projects like openclaw to understand advanced agent frameworks.",
     "copyright": "© {year} Damir Andrijanic",

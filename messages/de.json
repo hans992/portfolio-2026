@@ -104,6 +104,35 @@
     "p2": "Heute spezialisiere ich mich auf Full-Stack-KI-Anwendungen für den europäischen Markt – mit einem klaren Verständnis für die logistischen und regulatorischen Anforderungen (GDPR, SGB XI), die hier zählen. Meine Arbeit an Hausheld, einer kompletten Workflow-Plattform für einen 200-Mitarbeiter-Pflegedienst in NRW, zeigt, wie aus einem komplexen „logistischen Albtraum“ eine klare, produktionsreife digitale Plattform wird.",
     "p3": "Ich schreibe nicht nur Code. Ich baue Systeme, die für Menschen funktionieren."
   },
+  "contactSection": {
+    "title": "Kontakt",
+    "subtitle": "Ein Projekt im Kopf? Schreiben Sie eine Nachricht, ich melde mich."
+  },
+  "contactForm": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Ihr Name",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "sie@beispiel.de",
+    "projectTypeLabel": "Projektart",
+    "projectTypePlaceholder": "Projektart wählen",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Erzählen Sie von Ihrem Projekt...",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "projectType_ai_chatbot": "KI-Chatbot",
+    "projectType_rag_system": "RAG-System",
+    "projectType_fullstack_webapp": "Full-Stack-Webanwendung",
+    "projectType_other": "Sonstiges",
+    "error_nameMin": "Name muss mindestens 2 Zeichen haben",
+    "error_nameMax": "Name darf höchstens 100 Zeichen haben",
+    "error_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "error_projectType": "Bitte wählen Sie eine Projektart",
+    "error_messageMin": "Nachricht muss mindestens 20 Zeichen haben",
+    "error_messageMax": "Nachricht darf höchstens 2000 Zeichen haben",
+    "toast_success": "Nachricht gesendet! Ich melde mich bald.",
+    "toast_error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "toast_errorSend": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+  },
   "footer": {
     "openSource": "Ich studiere Projekte wie openclaw, um fortgeschrittene Agent-Frameworks zu verstehen.",
     "copyright": "© {year} Damir Andrijanic",

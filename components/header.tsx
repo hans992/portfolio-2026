@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/", labelKey: "home" },
   { href: "/#projects", labelKey: "projects" },
   { href: "/#about", labelKey: "about" },
+  { href: "/#contact", labelKey: "contact" },
 ] as const;
 
 export function Header() {

@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
 import { About } from "@/components/about";
+import { Contact } from "@/components/contact";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -16,6 +17,7 @@ export default async function HomePage({ params }: Props) {
       <Projects />
       <Skills />
       <About />
+      <Contact />
     </>
   );
 }
