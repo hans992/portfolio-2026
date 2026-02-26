@@ -39,6 +39,7 @@ export default async function HausheldPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("hausheldPage");
   const tNav = await getTranslations("nav");
+  const tProjects = await getTranslations("projects");
 
   return (
     <div className="min-h-screen">
@@ -230,6 +231,41 @@ export default async function HausheldPage({ params }: Props) {
 
             <div className="rounded-lg border border-border bg-muted/20 p-4 text-sm text-muted-foreground">
               {t("disclaimer")}
+            </div>
+
+            <div>
+              <h2 className="font-display text-lg font-semibold text-foreground mb-4">
+                {tProjects("linksTitle")}
+              </h2>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://github.com/hans992/Hausheld_App"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  {tProjects("repo")}
+                  <span aria-hidden>↗</span>
+                </a>
+                <a
+                  href="https://hausheld-app.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  {tProjects("live")}
+                  <span aria-hidden>↗</span>
+                </a>
+                <a
+                  href="https://hausheld-app-admin.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  {tProjects("admin")}
+                  <span aria-hidden>↗</span>
+                </a>
+              </div>
             </div>
           </section>
         </div>

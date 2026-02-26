@@ -46,6 +46,7 @@ export default async function Croatia360Page({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("croatia360Page");
   const tNav = await getTranslations("nav");
+  const tProjects = await getTranslations("projects");
 
   return (
     <div className="min-h-screen">
@@ -104,6 +105,32 @@ export default async function Croatia360Page({ params }: Props) {
                 <li>{t("tech3")}</li>
                 <li>{t("tech4")}</li>
               </ul>
+            </div>
+
+            <div>
+              <h2 className="font-display text-lg font-semibold text-foreground mb-4">
+                {tProjects("linksTitle")}
+              </h2>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://github.com/hans992/croatia360-v0.2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  {tProjects("repo")}
+                  <span aria-hidden>↗</span>
+                </a>
+                <a
+                  href="https://croatia360.vercel.app/en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  {tProjects("live")}
+                  <span aria-hidden>↗</span>
+                </a>
+              </div>
             </div>
           </section>
         </div>

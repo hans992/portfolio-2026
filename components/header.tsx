@@ -8,6 +8,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 import { Menu, X } from "lucide-react";
+import { Logo } from "./logo";
 
 const navLinks = [
   { href: "/", labelKey: "home" },
@@ -49,10 +50,12 @@ export function Header() {
       <div className="container mx-auto flex h-14 min-h-[3.5rem] max-w-5xl items-center justify-between gap-4 px-4 sm:h-16 sm:min-h-[4rem]">
         <Link
           href={`/${locale}`}
-          className="font-display text-lg font-semibold tracking-tight text-foreground sm:text-xl"
+          className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-foreground sm:text-xl"
           onClick={closeMobile}
+          aria-label="Damir Andrijanic – Home"
         >
-          Damir Andrijanic
+          <Logo size={36} className="rounded" />
+          <span>Damir Andrijanic</span>
         </Link>
 
         {/* Desktop nav */}
